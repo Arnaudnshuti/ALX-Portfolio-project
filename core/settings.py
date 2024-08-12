@@ -40,12 +40,10 @@ INSTALLED_APPS = [
 
     'widget_tweaks',                            # uses 'django-widget-tweaks' app
     'crispy_forms',                             # uses 'django-crispy-forms' app
-    'login_required',                           # uses 'django-login-required-middleware' app
 
     'homepage.apps.HomepageConfig',
     'inventory.apps.InventoryConfig',
     'transactions.apps.TransactionsConfig',
-
 ]
 
 MIDDLEWARE = [
@@ -56,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'login_required.middleware.LoginRequiredMiddleware',    # middleware used for global login
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -136,7 +132,7 @@ LOGIN_REDIRECT_URL = 'home'                             # sets the login redirec
 
 LOGIN_URL = 'login'                                     # sets the 'login' page as default when user tries to illegally access profile or other hidden pages
 
-LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [                    # urls ignored by the login_required. Can be accessed with out logging in
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [                    # urls ignored by the login_required. Can be accessed without logging in
     'login',
     'logout',
     'about',
